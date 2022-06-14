@@ -14,11 +14,16 @@ console.log("cost x km");
 const totalPrice = km * ticketPrice;
 console.log("you will pay $:", totalPrice);
 
+const discountElders = totalPrice * 0.4;
+//alert(discountElders);
+const discountYoung = totalPrice * 0.2;
+//alert(discountYoung);
+
 const clientAge = parseInt(prompt("age"));
 if (clientAge > 65) {
-  console.log(totalPrice * 0.4 - totalPrice, "$");
+  console.log(totalPrice - discountElders, "$");
 } else if (clientAge < 18) {
-  console.log(totalPrice * 0.2 - totalPrice, "$");
+  console.log(totalPrice - discountYoung, "$");
 } else {
   console.log("you have no discounts", totalPrice, "$");
 }
