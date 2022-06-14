@@ -5,31 +5,30 @@ va applicato uno sconto del 20% per i minorenni
 va applicato uno sconto del 40% per gli over 65.
 L'output del prezzo finale andrà mostrato in forma umana in console (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca. */
 
-const km = parseInt(prompt(" how many km  do you want to travel "));
-console.log("you will travel:", km);
+const km = parseInt(prompt(" how many km do you want to travel "));
+console.log("you will travel:", km, "km");
 
 const ticketPrice = 0.21;
-console.log("cost x km");
+console.warn("cost x km");
 
 const totalPrice = km * ticketPrice;
-console.log("you will pay $:", totalPrice);
+console.log("full price for destination:", totalPrice, "$");
 
-const discountElders = totalPrice * 0.4;
 //alert(discountElders);
-const discountYoung = totalPrice * 0.2;
 //alert(discountYoung);
-
-const afterDiscountElders = totalPrice - discountElders;
-
-const afterDiscountYoung = totalPrice - discountYoung;
 
 const clientAge = parseInt(prompt("age"));
 if (clientAge > 65) {
-  console.log(afterDiscountElders.toFixed(2), "$");
+  const afterDiscountElders = totalPrice - discountElders;
+  const discountElders = totalPrice * 0.4;
+  console.log("please pay:", afterDiscountElders.toFixed(2), "$");
 } else if (clientAge < 18) {
-  console.log(afterDiscountYoung.toFixed(2), "$");
+  const discountYoung = totalPrice * 0.2;
+  const afterDiscountYoung = totalPrice - discountYoung;
+  console.log("please pay:", afterDiscountYoung.toFixed(2), "$");
 } else {
-  console.log("you have no discounts", totalPrice, "$");
+  console.log("you have no discounts");
+  console.log("please pay:", totalPrice.toFixed(2), "$");
 }
 
 // how to ins3rt d3ecimal numb3r
