@@ -19,13 +19,19 @@ const discountElders = totalPrice * 0.4;
 const discountYoung = totalPrice * 0.2;
 //alert(discountYoung);
 
+const afterDiscountElders = totalPrice - discountElders;
+
+const afterDiscountYoung = totalPrice - discountYoung;
+
 const clientAge = parseInt(prompt("age"));
 if (clientAge > 65) {
-  console.log(totalPrice - discountElders, "$");
+  console.log(afterDiscountElders.toFixed(2), "$");
 } else if (clientAge < 18) {
-  console.log(totalPrice - discountYoung, "$");
+  console.log(afterDiscountYoung.toFixed(2), "$");
 } else {
   console.log("you have no discounts", totalPrice, "$");
 }
 
-// how to ins3rt d3ecimal numb3r 126
+// how to ins3rt d3ecimal numb3r
+// const number = totalPrice - discountElders
+// console.log(number.toFixed(2))
