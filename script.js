@@ -19,8 +19,8 @@ console.log("full price for destination:", totalPrice, "$");
 
 const clientAge = parseInt(prompt("age"));
 if (clientAge > 65) {
-  const afterDiscountElders = totalPrice - discountElders;
   const discountElders = totalPrice * 0.4;
+  const afterDiscountElders = totalPrice - discountElders;
   console.log("please pay:", afterDiscountElders.toFixed(2), "$");
 } else if (clientAge < 18) {
   const discountYoung = totalPrice * 0.2;
